@@ -3,7 +3,7 @@ import re
 from setuptools import find_packages, setup
 
 name = 'pormalizer'
-owner = 'xurvan'
+owner = 'tabmadi'
 
 with open(f'{name}/__init__.py') as f:
     version = re.search(r'([0-9]+(\.dev|\.|)){3}', f.read()).group(0)
