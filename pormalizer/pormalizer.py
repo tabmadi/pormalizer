@@ -288,7 +288,7 @@ class Pormalizer:
             '\u0622': '\u0627',  # ARABIC LETTER ALEF WITH MADDA ABOVE
         }
 
-    def normalize(self, text: str) -> str:
+    def normalize(self, text: str, keep_english: bool = False) -> str:
         text = unicodedata.normalize('NFKC', text)
         temp = ''
         length = len(text)
@@ -299,6 +299,10 @@ class Pormalizer:
                 continue
 
             if c in self.valid_chars:
+                temp += c
+                continue
+
+            if keep_english and 'a' <= c.lower() <= 'z':
                 temp += c
                 continue
 

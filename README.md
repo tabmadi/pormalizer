@@ -32,3 +32,11 @@ pormalizer = Pormalizer()
 normalized_text = pormalizer.normalize("متن امتحانی")
 print(normalized_text)
 ```
+
+By default every non-Persian character is replaced with a space. If you want to keep English words untouched, pass
+"keep_english":
+
+```python
+normalized_text = pormalizer.normalize("Hello متن امتحانی", keep_english=True)
+print(normalized_text)
+```
